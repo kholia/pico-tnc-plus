@@ -1,34 +1,21 @@
-# PICO TNC
+# Purpose
 
-PICO TNC is the Terminal Node Controler for Amateur Packet Radio powered by Raspberry Pi Pico.
+This project enables a Raspberry Pi Pico W to become a standalone RF-enabled
+APRS IGate.
 
-This TNC has same functionality as WB8WGA's PIC TNC.
+Just connect a BaoFeng radio to a Raspberry Pi Pico W and done! ;)
 
-## PIC TNC features
+## Usage
 
-- Encode and decode Bell 202 AFSK signal without modem chip
-- Digipeat UI packet up to 1024 byte length
-- Send beacon packet
-- Support converse mode
-- Support GPS tracker feature
-- Support both USB serial and UART serial interface
+Customize `pico_tnc/config.h` with your values.
 
-## Additional features
+Build the code using Arduino IDE.
 
-- Support KISS mode
-- Support multi-port up to 3 ports
+See `schematic.pdf` for the schematics (connections to make).
 
-## How to build
+## Notes
 
-```
-git clone https://github.com/amedes/pico_tnc.git
-cd pico_tnc
-mkdir build
-cd build
-cmake ..
-make -j4
-(flash 'pico_tnc/pico_tnc.uf2' file to your Pico)
-```
-![bell202-wave](bell202-wave.png)
-![command line](command.png)
-[![schemantic](schematic.jpg)](schematic.png)
+You do NOT need any "special BaoFeng" cable". We will make one ourselves ;)
+
+We also recommend connecting a `ASAIR AHT25 Integrated temperature and humidity
+sensor` to the Raspberry Pi Pico W for added fun.
